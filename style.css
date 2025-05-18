@@ -1,153 +1,342 @@
-/* Cores principais */
+/*
+  Tema: fundo preto com detalhes em amarelo.
+  Estrutura para duas páginas do projeto.
+*/
+
+/* Cores e variáveis do tema */
 :root {
-  --preto: #000;         /* fundo */
-  --amarelo: #ffd600;    /* destaque */
-  --branco: #fff;        /* texto */
+  --bg-main: #000;            /* cor fundo principal */
+  --yellow: #ffd600;          /* amarelo destaque */
+  --text-main: #fff;          
+  --text-secondary: #bbb;     
+  --button-bg: #ffd600;       /* fundo botão */
+  --button-text: #000;        /* texto botão */
+  --border-yellow: #ffd600;   /* borda amarelo */
 }
 
-/* Ajuste body */
+/* Ajuste do corpo da página */
 body {
-  margin: 0;                   /* tira margem */
-  background: var(--preto);    /* fundo preto */
-  color: var(--branco);        /* texto branco */
-  font-family: Arial, sans-serif; /* fonte padrão */
+  margin: 0;                                
+  background: var(--bg-main);               /* fundo preto */
+  color: var(--text-main);                  /* texto branco */
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* fonte tipo de letra usado */
+  min-height: 100vh;                        /* ocupa tela toda */
 }
 
-/* Centraliza e espaça conteúdo */
+/* Container principal centraliza e espaça conteúdos */
 .main-container {
-  min-height: 100vh;           /* ocupa tela toda */
-  display: flex;               /* usa flexbox para espaçamento dentro do container */
-  flex-direction: column;      /* em coluna */
-  align-items: center;         /* centraliza */
+  width: 100vw;                             /* largura total */
+  min-height: 100vh;                        /* altura mínima tela */
+  display: flex;                            /* flex para espaçamento dentro do cantainer */
+  flex-direction: column;                   /* direção coluna */
+  justify-content: flex-start;              /* alinha topo */
+  align-items: center;                      /* centraliza horizontal */
 }
 
-/* Página principal - área do banner */
+/* Configura página inicial destaque (hero) */
 .hero-section {
-  width: 100vw;                /* ocupa tela */
-  display: flex;               /* flexbox */
-  flex-direction: column;      /* coluna */
-  align-items: center;         /* centraliza */
-  padding: 60px 0;             /* espaço vertical */
-  position: relative;          /* para botão */
+  width: 100vw;                             /* largura total */
+  min-height: 100vh;                        /* altura total */
+  background: var(--bg-main);               /* fundo preto */
+  display: flex;                            /* flex espaçamento container */
+  flex-direction: column;                   /* coluna */
+  justify-content: center;                  /* centraliza vertical */
+  align-items: center;                      /* centraliza horizontal */
+  position: relative;                       /* para elementos absolutos */
+  overflow: hidden;                         /* esconde excesso */
 }
 
-/* Título e subtítulo */
+/* Área interna do hero (destaque): título e botão */
+.hero-content {
+  width: 90vw;                              /* largura responsiva */
+  max-width: 960px;                         /* largura máxima */
+  margin: 60px auto 0 auto;                 /* margem topo */
+  display: flex;                            /* flex espaçamento container */
+  justify-content: space-between;           /* espaço entre itens */
+  align-items: flex-start;                  /* alinha topo */
+  position: relative;                       /* para botão único */
+}
+
+/* Área do título principal */
+.hero-title-area {
+  margin-top: 40px;                         /* espaço superior */
+}
+
+/* Estilo do título principal */
 .hero-title {
-  color: var(--amarelo);       /* título amarelo */
-  font-size: 2.2rem;           /* tamanho */
-  font-weight: bold;           /* negrito */
-  margin-bottom: 10px;         /* espaço embaixo */
+  font-size: 2.8rem;                        /* tamanho letra título */
+  font-weight: 700;                         /* intensidade do negrito */
+  color: var(--yellow);                     /* cor destaque */
+  margin: 0 0 10px 0;                       /* margem inferior */
 }
+
+/* Destaque amarelo no título */
+.hero-title .highlight {
+  color: var(--yellow);                     /* cor destaque (span edita só uma parte e o restante mantém o padrão) */
+}
+
+/* Subtítulo do hero */
 .hero-subtitle {
-  font-size: 1.2rem;           /* menor que título */
-  margin-bottom: 30px;         /* espaço embaixo */
+  font-size: 1.6rem;                        /* tamanho subtítulo */
+  font-weight: 400;                         /* peso normal */
+  color: var(--text-main);                  /* cor branco */
+  margin: 0 0 30px 0;                       /* margem inferior */
 }
 
-/* Botão topo direito */
+/* Botão de acesso à página 2 */
 .frontend-btn {
-  position: absolute;          /* posiciona no topo */
-  top: 10px;                   /* distância topo */
-  right: 10px;                 /* distância direita */
-  background: var(--preto);    /* fundo preto */
-  border: 2px solid var(--amarelo); /* borda amarela */
-  border-radius: 8px;          /* borda arredondada */
-  color: var(--amarelo);       /* texto amarelo */
-  width: 80px;                 /* largura */
-  height: 80px;                /* altura */
-  display: flex;               /* flexbox */
-  flex-direction: column;      /* coluna */
-  align-items: center;         /* centraliza */
-  justify-content: center;     /* centraliza */
-  text-decoration: none;       /* tira sublinhado */
-  font-weight: bold;           /* texto negrito */
-  cursor: pointer;             /* muda cursor pra iteração acontecer */
-}
-.frontend-btn:hover {          /* estiliza o botão quando passa ponteiro */
-  background: var(--amarelo);  /* fundo amarelo no hover */
-  color: var(--preto);         /* texto preto no hover */
+  position: absolute;                       /* posição - localização livre em relação ao item antecessor */
+  top: 0;                                   /* topo */
+  right: 0;                                 /* direita */
+  background: var(--bg-main);               /* fundo preto */
+  border: 2px solid var(--yellow);          /* borda amarela */
+  border-radius: 10px;                      /* borda arredondada */
+  display: flex;                            /* flex container */
+  flex-direction: column;                   /* coluna */
+  align-items: center;                      /* centraliza */
+  width: 90px;                              /* largura botão */
+  height: 90px;                             /* altura botão */
+  text-decoration: none;                    /* sem sublinhado */
+  transition: background 0.2s, box-shadow 0.2s; /* animação transição */
+  box-shadow: 0 2px 18px rgba(255, 214, 0, 0.07); /* sombra */
+  cursor: pointer;                          /* muda cursor pra iteração acontecer */
 }
 
-/* Página 2 - perfil */
+/* Efeito hover nos botões principais */
+.frontend-btn:hover, .profile-btn:hover {   /* estiliza - hover - o botão quando passa ponteiro */
+  background: var(--yellow);                /* fundo amarelo no hover */
+  color: var(--button-text);                /* texto preto no hover */
+}
+
+/* Ícone do botão front-end */
+.frontend-icon {
+  font-size: 2.5rem;                        /* tamanho ícone */
+  color: var(--yellow);                     /* cor amarelo */
+  margin-top: 12px;                         /* espaço topo */
+  font-weight: bold;                        /* negrito */
+}
+
+/* Texto do botão front-end */
+.frontend-label {
+  font-size: 1rem;                          /* tamanho texto */
+  font-weight: 500;                         /* intensidade médio */
+  color: var(--yellow);                     /* cor amarelo */
+  margin-top: 6px;                          /* espaço topo */
+}
+
+/* Elementos decorativos do hero (listras e linha) */
+.hero-decoration {
+  position: absolute;                       /* posição absoluta */
+  left: 0;                                  /* esquerda */
+  width: 100vw;                             /* largura total */
+  bottom: 40px;                             /* distância base */
+}
+
+/* Listras decorativas */
+.hero-stripes {
+  width: 170px;                             /* largura faixas */
+  height: 10px;                             /* altura faixas */
+  background: repeating-linear-gradient(
+    to right,
+    var(--yellow), var(--yellow) 2px,
+    transparent 2px, transparent 8px
+  );                                        /* listras amarelas */
+  margin-bottom: 20px;                      /* espaço inferior */
+  margin-left: 40px;                        /* espaço à esquerda */
+}
+
+/* Linha decorativa */
+.hero-line {
+  width: 70vw;                              /* largura responsiva */
+  max-width: 800px;                         /* largura máxima */
+  height: 2px;                              /* espessura linha */
+  background: linear-gradient(90deg, var(--yellow) 60%, transparent 100%); /* gradiente amarelo */
+  border-radius: 2px;                       /* borda arredondada */
+  position: relative;                       /* permite ::after inserir conteúdo após o conteúdo de um elemento selecionado */
+  margin-left: 40px;                        /* espaço à esquerda */
+}
+
+/* Ponto final na linha decorativa */
+.hero-line::after {
+  content: '';                              /* gera elemento */
+  position: absolute;                       /* posição absoluta */
+  right: 0;                                 /* direita */
+  top: -5px;                                /* sobe ponto */
+  width: 13px;                              /* largura ponto */
+  height: 13px;                             /* altura ponto */
+  background: var(--yellow);                /* cor amarelo */
+  border-radius: 50%;                       /* círculo */
+}
+
+/* Fundo da página secundária */
+.secondary-bg {
+  background: var(--bg-main);               /* fundo preto */
+}
+
+/* Seção do perfil na página 2 apresentação.html */
 .profile-section {
-  background: var(--preto);    /* fundo preto */
-  border-radius: 16px;         /* arredonda */
-  display: flex;               /* flexbox */
-  flex-wrap: wrap;             /* quebra em tela pequena */
-  justify-content: center;     /* centraliza */
-  align-items: center;         /* centraliza */
-  padding: 40px 16px;          /* espaçamento */
-  margin: 40px 0;              /* espaço fora */
-  gap: 24px;                   /* espaço entre blocos */
-  max-width: 900px;            /* largura máxima */
+  width: 95vw;                              /* largura responsiva */
+  max-width: 1100px;                        /* largura máxima */
+  margin: 60px auto;                        /* margem vertical */
+  background: var(--bg-main);               /* fundo preto */
+  border-radius: 20px;                      /* borda arredondada */
+  display: flex;                            /* flex espaçamento dentro do container */
+  flex-direction: row;                      /* linha */
+  justify-content: center;                  /* centraliza */
+  align-items: center;                      /* centraliza */
+  box-shadow: 0 2px 28px rgba(255, 214, 0, 0.07); /* sombra */
+  padding: 48px 32px;                       /* espaçamento interno */
+  gap: 32px;                                /* espaço entre colunas */
 }
 
-/* Texto do perfil */
+/* Bloco de informações do perfil */
+.profile-info {
+  flex: 1.2;                                /* proporção maior */
+  display: flex;                            /* flex container */
+  flex-direction: column;                   /* coluna */
+  justify-content: center;                  /* centraliza vertical */
+}
+
+/* Título do perfil */
 .profile-title {
-  color: var(--amarelo);       /* destaque amarelo */
-  font-size: 1.5rem;           /* tamanho maior */
-  margin-bottom: 16px;         /* espaço embaixo */
+  font-size: 2rem;                          /* tamanho título */
+  font-weight: 600;                         /* intensidade negrito */
+  color: var(--text-main);                  /* cor branco */
+  margin: 0 0 24px 0;                       /* espaço inferior */
 }
+
+/* Destaque amarelo no título do perfil */
+.profile-title .highlight {
+  color: var(--yellow);                     /* destaque amarelo */
+}
+
+/* Descrição do perfil */
 .profile-desc {
-  color: #bbb;                 /* cinza claro */
-  margin-bottom: 20px;         /* espaço embaixo */
-  font-size: 1rem;             /* tamanho normal */
+  font-size: 1.1rem;                        /* tamanho texto */
+  color: var(--text-secondary);             /* cor cinza */
+  margin-bottom: 32px;                      /* espaço inferior */
+  max-width: 420px;                         /* largura máxima */
 }
 
-/* Botões das redes sociais */
+/* Agrupamento dos botões sociais */
 .profile-buttons {
-  display: flex;               /* flexbox */
-  gap: 16px;                   /* espaço entre botões */
+  display: flex;                            /* flex espaçamento dentro do container */
+  gap: 20px;                                /* espaço entre botões */
 }
+
+/* Estilo dos botões sociais */
 .profile-btn {
-  background: var(--amarelo);  /* fundo amarelo */
-  color: var(--preto);         /* texto preto */
-  border: none;                /* sem borda */
-  border-radius: 6px;          /* arredondado */
-  padding: 10px 22px;          /* espaçamento */
-  font-weight: bold;           /* negrito */
-  text-decoration: none;       /* tira sublinhado */
-  transition: 0.2s;            /* animação simples */
-}
-.profile-btn:hover {
-  background: #fff700;         /* amarelo mais forte no hover */
+  background: var(--button-bg);             /* fundo amarelo */
+  color: var(--button-text);                /* texto preto */
+  border: none;                             /* sem borda */
+  border-radius: 8px;                       /* borda arredondada */
+  padding: 12px 36px;                       /* espaçamento */
+  font-size: 1.1rem;                        /* tamanho texto */
+  font-weight: 600;                         /* peso negrito */
+  text-decoration: none;                    /* sem sublinhado */
+  transition: background 0.2s, color 0.2s;  /* animação hover */
+  cursor: pointer;                          /* estiliza o botão quando passa ponteiro */
+  box-shadow: 0 2px 14px rgba(255, 214, 0, 0.08); /* sombra */
 }
 
-/* Foto do perfil */
+/* Área para foto do perfil */
 .profile-photo-area {
-  display: flex;               /* flexbox */
-  align-items: center;         /* centraliza */
-  justify-content: center;     /* centraliza */
-}
-.photo-placeholder {           /* lugar da imagem a ser carregada */
-  width: 160px;                /* largura fixa */
-  height: 170px;               /* altura fixa */
-  background: #222;            /* fundo escuro */
-  border-radius: 12px;         /* arredonda */
-  border: 2px dashed var(--amarelo); /* borda tracejada */
-  overflow: hidden;            /* esconde excesso */
-  display: flex;               /* flexbox */
-  align-items: center;         /* centraliza */
-  justify-content: center;     /* centraliza */
-}
-.profile-photo {
-  width: 100%;                 /* ocupa tudo */
-  height: 100%;                /* ocupa tudo */
-  object-fit: cover;           /* cobre área */
+  flex: 1;                                  /* proporção */
+  display: flex;                            /* flex espaçamento dentro do container */
+  align-items: center;                      /* centraliza vertical */
+  justify-content: center;                  /* centraliza horizontal */
+  position: relative;                       /* permite decor absoluto - posicionar elemento em relação ao seu elemento pai */
+  min-width: 250px;                         /* largura mínima */
 }
 
-/* Responsivo para telas menores */
-@media (max-width: 600px) {
+/* Moldura e fundo da foto */
+.photo-placeholder {
+  width: 240px;                             /* largura foto */
+  height: 260px;                            /* altura foto */
+  background: #222;                         /* fundo escuro */
+  border-radius: 16px;                      /* borda arredondada */
+  box-shadow: 0 2px 24px rgba(255, 214, 0, 0.12); /* sombra */
+  border: 2px solid var(--border-yellow);   /* borda amarela */
+  overflow: hidden;                         /* oculta excesso */
+  display: flex;                            /* flex container */
+  align-items: center;                      /* centraliza vertical */
+  justify-content: center;                  /* centraliza horizontal */
+  position: relative;                       /* permite decor absoluto - posicionar elemento em relação ao seu elemento pai */
+}
+
+/* Imagem do perfil */
+.profile-photo {
+  width: 100%;                              /* ocupa toda largura */
+  height: 100%;                             /* ocupa toda altura */
+  object-fit: cover;                        /* cobre área */
+  display: block;                           /* exibe como bloco */
+}
+
+/* Decoração animada ao redor da foto */
+.photo-decor {
+  position: absolute;                       /* posição absoluta */
+  top: -10px;                               /* acima da foto */
+  left: -10px;                              /* à esquerda da foto */
+  width: 240px;                             /* largura decor */
+  height: 260px;                            /* altura decor */
+  border: 2px dashed var(--yellow);         /* borda tracejada amarela */
+  border-radius: 20px;                      /* borda arredondada */
+  pointer-events: none;                     /* ignora eventos mouse */
+  z-index: 1;                               /* acima da foto */
+  animation: pulse-decor 2s infinite alternate; /* animação pulsar */
+}
+
+/* Animação da decoração da foto */
+@keyframes pulse-decor {
+  from { opacity: 0.8; }                    /* início opacidade */
+  to { opacity: 0.4; }                      /* fim opacidade */
+}
+
+/* Responsividade para telas médias */
+@media (max-width: 900px) {
   .profile-section {
-    flex-direction: column;    /* empilha */
-    padding: 20px 4px;         /* menos espaço */
+    flex-direction: column;                 /* empilha colunas */
+    gap: 32px;                              /* espaço entre blocos */
+    padding: 32px 12px;                     /* padding menor */
   }
-  .photo-placeholder {
-    width: 110px;              /* menor */
-    height: 120px;             /* menor */
+  .profile-photo-area {
+    min-width: 180px;                       /* largura reduzida */
+  }
+  .photo-placeholder, .photo-decor {
+    width: 180px;                           /* largura reduzida */
+    height: 200px;                          /* altura reduzida */
+  }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  .hero-content, .profile-section {
+    flex-direction: column;                 /* empilha colunas */
+    align-items: flex-start;                /* alinha à esquerda */
+    padding: 12px;                          /* padding menor */
+    gap: 18px;                              /* espaço menor */
   }
   .frontend-btn {
-    width: 55px;               /* menor */
-    height: 55px;              /* menor */
-    font-size: 1.2rem;         /* fonte menor */
+    right: 12px;                            /* botão mais à esquerda */
+    top: 8px;                               /* botão mais em cima */
+    width: 70px;                            /* botão menor */
+    height: 70px;                           /* botão menor */
+  }
+  .hero-title {
+    font-size: 2rem;                        /* título menor */
+  }
+  .hero-subtitle, .profile-title {
+    font-size: 1.1rem;                      /* texto menor */
+  }
+  .profile-photo-area {
+    min-width: 120px;                       /* largura mínima menor */
+  }
+  .photo-placeholder, .photo-decor {
+    width: 120px;                           /* foto menor */
+    height: 140px;                          /* altura menor */
+  }
+  .profile-btn {
+    padding: 10px 14px;                     /* padding - preenchimento - botão menor */
+    font-size: 1rem;                        /* texto menor */
   }
 }
