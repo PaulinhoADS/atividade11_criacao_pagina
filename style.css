@@ -83,59 +83,62 @@ body {
   margin: 0 0 30px 0;                       /* margem inferior */
 }
 
-/* Botão de acesso à página 2 */
+/* Wrapper para centralizar botão e frase juntos */
+.frontend-btn-wrapper {
+  display: flex;                   /* Usa flexbox para organizar o conteúdo interno (botão + frase) */
+  flex-direction: column;          /* Organiza os itens (botão e frase) em coluna, um embaixo do outro */
+  align-items: center;             /* Centraliza os itens no eixo horizontal (coluna centralizada) */
+  position: relative;              /* Torna o wrapper um contexto para posicionamento absoluto, se necessário */
+}
+
+/* Ajuste do botão para funcionar com o wrapper */
 .frontend-btn {
-  position: absolute;                       /* posição - localização livre em relação ao item antecessor */
-  top: 0;                                   /* topo */
-  right: 0;                                 /* direita */
-  background: var(--bg-main);               /* fundo preto */
-  border: 2px solid var(--yellow);          /* borda amarela */
-  border-radius: 10px;                      /* borda arredondada */
-  display: flex;                            /* flex container */
-  flex-direction: column;                   /* coluna */
-  align-items: center;                      /* centraliza */
-  width: 90px;                              /* largura botão */
-  height: 90px;                             /* altura botão */
-  text-decoration: none;                    /* sem sublinhado */
-  transition: background 0.2s, box-shadow 0.2s; /* animação transição */
-  box-shadow: 0 2px 18px rgba(255, 214, 0, 0.07); /* sombra */
-  cursor: pointer;                          /* muda cursor pra iteração acontecer */
+  position: static;                     /* Segue o fluxo normal do layout, permitindo centralização pelo flex do wrapper */
+  background: var(--bg-main);           /* Fundo preto (usa a variável do tema) */
+  border: 2px solid var(--yellow);      /* Borda amarela de 2px, destacando o botão */
+  border-radius: 10px;                  /* Bordas arredondadas (10px) para visual moderno */
+  display: flex;                        /* Ativa Flexbox dentro do botão */
+  flex-direction: column;               /* Os elementos internos (ícone e texto) ficam em coluna, um embaixo do outro */
+  align-items: center;                  /* Centraliza horizontalmente os elementos internos do botão */
+  width: 90px;                          /* Largura fixa do botão */
+  height: 90px;                         /* Altura fixa do botão */
+  text-decoration: none;                /* Remove sublinhado do link (caso seja um <a>) */
+  transition: background 0.2s, box-shadow 0.2s; /* Animação suave ao mudar cor de fundo ou sombra */
+  box-shadow: 0 2px 18px rgba(255, 214, 0, 0.07); /* Sombra amarela suave para dar profundidade */
+  cursor: pointer;                      /* Mostra o cursor de mão ao passar por cima */
+  margin-bottom: 8px;                   /* Espaço abaixo do botão para afastar a frase */
 }
 
-/* Efeito hover nos botões principais */
-.frontend-btn:hover, .profile-btn:hover {   /* estiliza - hover - o botão quando passa ponteiro */
-  background: var(--yellow);                /* fundo amarelo no hover */
-  color: var(--button-text);                /* texto preto no hover */
+.frontend-btn:hover, .profile-btn:hover {
+  background: var(--yellow);            /* Fundo amarelo ao passar o mouse */
+  color: var(--button-text);            /* Texto preto ao passar o mouse (usa a variável do tema) */
 }
 
-/* Ícone do botão front-end */
 .frontend-icon {
-  font-size: 2.5rem;                        /* tamanho ícone */
-  color: var(--yellow);                     /* cor amarelo */
-  margin-top: 12px;                         /* espaço topo */
-  font-weight: bold;                        /* negrito */
+  font-size: 2.5rem;                    /* Ícone grande, destacado */
+  color: var(--yellow);                  /* Cor amarela (destaque) */
+  margin-top: 12px;                      /* Espaço no topo, centralizando o ícone verticalmente */
+  font-weight: bold;                     /* Ícone em negrito */
 }
 
-/* Texto do botão front-end */
 .frontend-label {
-  font-size: 1rem;                          /* tamanho texto */
-  font-weight: 500;                         /* intensidade médio */
-  color: var(--yellow);                     /* cor amarelo */
-  margin-top: 6px;                          /* espaço topo */
+  font-size: 1rem;                       /* Tamanho da fonte do texto do botão */
+  font-weight: 500;                      /* Peso da fonte médio (seminegrito) */
+  color: var(--yellow);                  /* Cor amarela para combinar com o tema */
+  margin-top: 6px;                       /* Espaço acima do texto, separando do ícone */
 }
-
 
 /* Frase abaixo do botão FRONT-END */
 .saiba-mais {
-  display: block;                              /* Garante que ocupe uma linha inteira */
-  margin: 24px auto 0 auto;                    /* Espaço acima e centraliza horizontalmente */
-  font-size: 1.1rem;                           /* Tamanho de fonte um pouco maior */
-  color: var(--yellow);                        /* Amarelo destacado */
-  font-weight: 600;                            /* Negrito */
-  text-align: center;                          /* Centralizado */
-  letter-spacing: 1px;                         /* Espaçamento entre letras */
-  text-shadow: 0 2px 8px rgba(255,214,0,0.07); /* Leve sombra estilizada */
-  max-width: 300px;                            /* Previne cortes em telas pequenas */
+  margin: 0;                                    /* Remove qualquer margem padrão do parágrafo */
+  font-size: 1.1rem;                            /* Deixa a fonte um pouco maior para destaque */
+  color: var(--yellow);                         /* Usa o amarelo do tema para destacar a frase */
+  font-weight: 600;                             /* Deixa o texto em seminegrito */
+  text-align: center;                           /* Centraliza o texto dentro do bloco */
+  letter-spacing: 1px;                          /* Espaçamento entre as letras para dar um ar mais estilizado */
+  text-shadow: 0 2px 8px rgba(255,214,0,0.07);  /* Sombra amarela suave para dar leve brilho */
+  width: 100%;                                  /* Ocupa toda a largura disponível do wrapper */
+  max-width: 140px;                             /* Limita a largura máxima, evitando que a frase fique muito esticada */
 }
 
 /* Elementos decorativos do hero (listras e linha) */
