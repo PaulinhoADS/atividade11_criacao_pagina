@@ -83,33 +83,6 @@ body {
   margin: 0 0 30px 0;                       /* margem inferior */
 }
 
-/* Wrapper para centralizar botão e frase juntos */
-.frontend-btn-wrapper {
-  display: flex;                          /* Usa flexbox para organizar o conteúdo interno (botão + frase) */
-  flex-direction: column;                 /* Organiza os itens (botão e frase) em coluna, um embaixo do outro */
-  align-items: center;                    /* Centraliza os itens no eixo horizontal (coluna centralizada) */
-  position: relative;                     /* Torna o wrapper um contexto para posicionamento absoluto, se necessário */
-}
-
-/* Ajuste do botão para funcionar com o wrapper */
-.frontend-btn {
-  position: static;                        /* Remove qualquer posicionamento absoluto, permitindo centralização natural pelo flex */
-  margin-bottom: 8px;                      /* Adiciona um pequeno espaço abaixo do botão, separando-o da frase */
-}
-
-/* Frase abaixo do botão FRONT-END */
-.saiba-mais {
-  margin: 0;                                      /* Remove qualquer margem padrão do parágrafo */
-  font-size: 1.1rem;                              /* Deixa a fonte um pouco maior para destaque */
-  color: var(--yellow);                           /* Usa o amarelo do tema para destacar a frase */
-  font-weight: 600;                               /* Deixa o texto em seminegrito */
-  text-align: center;                             /* Centraliza o texto dentro do bloco */
-  letter-spacing: 1px;                            /* Espaçamento entre as letras para dar um ar mais estilizado */
-  text-shadow: 0 2px 8px rgba(255,214,0,0.07);    /* Sombra amarela suave para dar leve brilho */
-  width: 100%;                                    /* Ocupa toda a largura disponível do wrapper */
-  max-width: 140px;                               /* Limita a largura máxima, evitando que a frase fique muito esticada */
-}
-
 /* Botão de acesso à página 2 */
 .frontend-btn {
   position: absolute;                       /* posição - localização livre em relação ao item antecessor */
