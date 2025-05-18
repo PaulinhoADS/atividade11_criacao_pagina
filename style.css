@@ -1,0 +1,153 @@
+/* Cores principais */
+:root {
+  --preto: #000;         /* fundo */
+  --amarelo: #ffd600;    /* destaque */
+  --branco: #fff;        /* texto */
+}
+
+/* Ajuste body */
+body {
+  margin: 0;                   /* tira margem */
+  background: var(--preto);    /* fundo preto */
+  color: var(--branco);        /* texto branco */
+  font-family: Arial, sans-serif; /* fonte padrão */
+}
+
+/* Centraliza e espaça conteúdo */
+.main-container {
+  min-height: 100vh;           /* ocupa tela toda */
+  display: flex;               /* usa flexbox para espaçamento dentro do container */
+  flex-direction: column;      /* em coluna */
+  align-items: center;         /* centraliza */
+}
+
+/* Página principal - área do banner */
+.hero-section {
+  width: 100vw;                /* ocupa tela */
+  display: flex;               /* flexbox */
+  flex-direction: column;      /* coluna */
+  align-items: center;         /* centraliza */
+  padding: 60px 0;             /* espaço vertical */
+  position: relative;          /* para botão */
+}
+
+/* Título e subtítulo */
+.hero-title {
+  color: var(--amarelo);       /* título amarelo */
+  font-size: 2.2rem;           /* tamanho */
+  font-weight: bold;           /* negrito */
+  margin-bottom: 10px;         /* espaço embaixo */
+}
+.hero-subtitle {
+  font-size: 1.2rem;           /* menor que título */
+  margin-bottom: 30px;         /* espaço embaixo */
+}
+
+/* Botão topo direito */
+.frontend-btn {
+  position: absolute;          /* posiciona no topo */
+  top: 10px;                   /* distância topo */
+  right: 10px;                 /* distância direita */
+  background: var(--preto);    /* fundo preto */
+  border: 2px solid var(--amarelo); /* borda amarela */
+  border-radius: 8px;          /* borda arredondada */
+  color: var(--amarelo);       /* texto amarelo */
+  width: 80px;                 /* largura */
+  height: 80px;                /* altura */
+  display: flex;               /* flexbox */
+  flex-direction: column;      /* coluna */
+  align-items: center;         /* centraliza */
+  justify-content: center;     /* centraliza */
+  text-decoration: none;       /* tira sublinhado */
+  font-weight: bold;           /* texto negrito */
+  cursor: pointer;             /* muda cursor pra iteração acontecer */
+}
+.frontend-btn:hover {          /* estiliza o botão quando passa ponteiro */
+  background: var(--amarelo);  /* fundo amarelo no hover */
+  color: var(--preto);         /* texto preto no hover */
+}
+
+/* Página 2 - perfil */
+.profile-section {
+  background: var(--preto);    /* fundo preto */
+  border-radius: 16px;         /* arredonda */
+  display: flex;               /* flexbox */
+  flex-wrap: wrap;             /* quebra em tela pequena */
+  justify-content: center;     /* centraliza */
+  align-items: center;         /* centraliza */
+  padding: 40px 16px;          /* espaçamento */
+  margin: 40px 0;              /* espaço fora */
+  gap: 24px;                   /* espaço entre blocos */
+  max-width: 900px;            /* largura máxima */
+}
+
+/* Texto do perfil */
+.profile-title {
+  color: var(--amarelo);       /* destaque amarelo */
+  font-size: 1.5rem;           /* tamanho maior */
+  margin-bottom: 16px;         /* espaço embaixo */
+}
+.profile-desc {
+  color: #bbb;                 /* cinza claro */
+  margin-bottom: 20px;         /* espaço embaixo */
+  font-size: 1rem;             /* tamanho normal */
+}
+
+/* Botões das redes sociais */
+.profile-buttons {
+  display: flex;               /* flexbox */
+  gap: 16px;                   /* espaço entre botões */
+}
+.profile-btn {
+  background: var(--amarelo);  /* fundo amarelo */
+  color: var(--preto);         /* texto preto */
+  border: none;                /* sem borda */
+  border-radius: 6px;          /* arredondado */
+  padding: 10px 22px;          /* espaçamento */
+  font-weight: bold;           /* negrito */
+  text-decoration: none;       /* tira sublinhado */
+  transition: 0.2s;            /* animação simples */
+}
+.profile-btn:hover {
+  background: #fff700;         /* amarelo mais forte no hover */
+}
+
+/* Foto do perfil */
+.profile-photo-area {
+  display: flex;               /* flexbox */
+  align-items: center;         /* centraliza */
+  justify-content: center;     /* centraliza */
+}
+.photo-placeholder {           /* lugar da imagem a ser carregada */
+  width: 160px;                /* largura fixa */
+  height: 170px;               /* altura fixa */
+  background: #222;            /* fundo escuro */
+  border-radius: 12px;         /* arredonda */
+  border: 2px dashed var(--amarelo); /* borda tracejada */
+  overflow: hidden;            /* esconde excesso */
+  display: flex;               /* flexbox */
+  align-items: center;         /* centraliza */
+  justify-content: center;     /* centraliza */
+}
+.profile-photo {
+  width: 100%;                 /* ocupa tudo */
+  height: 100%;                /* ocupa tudo */
+  object-fit: cover;           /* cobre área */
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 600px) {
+  .profile-section {
+    flex-direction: column;    /* empilha */
+    padding: 20px 4px;         /* menos espaço */
+  }
+  .photo-placeholder {
+    width: 110px;              /* menor */
+    height: 120px;             /* menor */
+  }
+  .frontend-btn {
+    width: 55px;               /* menor */
+    height: 55px;              /* menor */
+    font-size: 1.2rem;         /* fonte menor */
+  }
+}
