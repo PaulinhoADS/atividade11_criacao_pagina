@@ -124,16 +124,18 @@ body {
   margin-top: 6px;                          /* espaço topo */
 }
 
+
 /* Frase abaixo do botão FRONT-END */
 .saiba-mais {
-  margin-top: 100px;                       /* distancia do topo/alinha abaixo do botão */
-  margin-left: auto;                      
-  margin-right: 0;
-  font-size: 1rem;                         /* tamanho fonte */
-  color: var(--yellow);                    /* amarelo igual ao destaque */
-  font-weight: 500;                        /* largura fonte */
-  text-align: right;                       /* alinhamento */
-  width: 90px;                             /* largura */
+  display: block;                              /* Garante que ocupe uma linha inteira */
+  margin: 24px auto 0 auto;                    /* Espaço acima e centraliza horizontalmente */
+  font-size: 1.1rem;                           /* Tamanho de fonte um pouco maior */
+  color: var(--yellow);                        /* Amarelo destacado */
+  font-weight: 600;                            /* Negrito */
+  text-align: center;                          /* Centralizado */
+  letter-spacing: 1px;                         /* Espaçamento entre letras */
+  text-shadow: 0 2px 8px rgba(255,214,0,0.07); /* Leve sombra estilizada */
+  max-width: 300px;                            /* Previne cortes em telas pequenas */
 }
 
 /* Elementos decorativos do hero (listras e linha) */
@@ -159,13 +161,13 @@ body {
 
 /* Linha decorativa */
 .hero-line {
-  width: 70vw;                              /* largura responsiva */
-  max-width: 800px;                         /* largura máxima */
-  height: 2px;                              /* espessura linha */
+  width: 70vw;                                                             /* largura responsiva */
+  max-width: 800px;                                                        /* largura máxima */
+  height: 2px;                                                             /* espessura linha */
   background: linear-gradient(90deg, var(--yellow) 60%, transparent 100%); /* gradiente amarelo */
-  border-radius: 2px;                       /* borda arredondada */
-  position: relative;                       /* permite ::after inserir conteúdo após o conteúdo de um elemento selecionado */
-  margin-left: 40px;                        /* espaço à esquerda */
+  border-radius: 2px;                                                      /* borda arredondada */
+  position: relative;                                                      /* permite ::after inserir conteúdo após o conteúdo de um elemento selecionado */
+  margin-left: 40px;                                                       /* espaço à esquerda */
 }
 
 /* Ponto final na linha decorativa */
@@ -288,26 +290,25 @@ body {
 
 /* Botão "voltar" fixo no canto inferior esquerdo da página 2 */
 .voltar-btn {
-  position: fixed;                                /* Fixa o botão na tela, independente do scroll */
-  bottom: 24px;                                   /* Distância da base da tela */
-  left: 24px;                                     /* Distância da lateral esquerda da tela */
-  background: var(--yellow);                      /* Cor de fundo amarelo (destaque) */
-  color: var(--button-text);                      /* Cor do texto (preto) */
-  border: none;                                   /* Sem borda padrão */
-  border-radius: 8px;                             /* Bordas arredondadas */
-  padding: 12px 32px;                             /* Espaço interno: cima/baixo e laterais */
-  font-size: 1.1rem;                              /* Tamanho da fonte */
-  font-weight: bold;                              /* Texto em negrito */
-  text-decoration: none;                          /* Remove sublinhado do link */
-  box-shadow: 0 2px 10px rgba(255, 214, 0, 0.13); /* Sombra suave amarela */
-  transition: background 0.2s, color 0.2s;        /* Suaviza transição de cor/fundo (hover estiliza o botão quando passa mouse) */
-  z-index: 1000;                                  /* Garante que o botão fique acima de outros elementos */
+  position: fixed;                         /* Fixo na tela, independente do scroll */
+  bottom: 190px;                           /* distancia da base da tela */
+  left: 40px;                              /* Distância da lateral esquerda */
+  background: var(--yellow);               /* Fundo amarelo */
+  color: var(--button-text);               /* Texto preto */
+  border: none;                            /* Sem borda padrão */
+  border-radius: 8px;                      /* Bordas arredondadas */
+  padding: 12px 32px;                      /* Espaço interno */
+  font-size: 1.1rem;                       /* Tamanho da fonte */
+  font-weight: bold;                       /* Negrito */
+  text-decoration: none;                   /* Remove sublinhado */
+  box-shadow: 0 2px 10px rgba(255, 214, 0, 0.13); /* Sombra */
+  transition: background 0.2s, color 0.2s; /* Transição suave */
+  z-index: 1000;                           /* Sobrepõe outros elementos */
 }
-
 .voltar-btn:hover {
-  background: var(--bg-main);                     /* Fundo preto ao passar o mouse */
-  color: var(--yellow);                           /* Texto amarelo ao passar o mouse */
-  border: 2px solid var(--yellow);                /* Borda amarela ao passar o mouse */
+  background: var(--bg-main);              /* Fundo preto ao passar mouse */
+  color: var(--yellow);                    /* Texto amarelo ao passar mouse */
+  border: 2px solid var(--yellow);         /* Borda amarela */
 }
 
 /* Responsividade para telas médias */
