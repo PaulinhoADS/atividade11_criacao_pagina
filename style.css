@@ -251,25 +251,27 @@ body {
 
 /* Moldura e fundo da foto */
 .photo-placeholder {
-  width: 240px;                             /* largura foto */
-  height: 260px;                            /* altura foto */
-  background: #222;                         /* fundo escuro */
-  border-radius: 16px;                      /* borda arredondada */
-  box-shadow: 0 2px 24px rgba(255, 214, 0, 0.12); /* sombra */
-  border: 2px solid var(--border-yellow);   /* borda amarela */
-  overflow: hidden;                         /* oculta excesso */
-  display: flex;                            /* flex container */
-  align-items: center;                      /* centraliza vertical */
-  justify-content: center;                  /* centraliza horizontal */
-  position: relative;                       /* permite decor absoluto - posicionar elemento em relação ao seu elemento pai */
+  width: 385px;                                     /* largura da moldura 
+  height: 510px;                                    /* altura da moldura 
+  background: #222;                                 /* fundo escuro */
+  border-radius: 16px;                              /* borda arredondada */
+  box-shadow: 0 2px 24px rgba(255, 214, 0, 0.12);   /* sombra */
+  border: 4px solid var(--border-yellow);           /* borda amarela mais grossa */
+  overflow: hidden;                                 /* oculta excesso */
+  display: flex;                                    /* flex espaçamento dentro do container */
+  align-items: center;                              /* centraliza vertical */
+  justify-content: center;                          /* centraliza horizontal */
+  position: relative;                               /* para posicionamentos */
+  padding: 0;                                       /* sem padding para encaixar a foto certinho */
 }
 
 /* Imagem do perfil */
 .profile-photo {
-  width: 100%;                              /* ocupa toda largura */
-  height: 100%;                             /* ocupa toda altura */
-  object-fit: cover;                        /* cobre área */
-  display: block;                           /* exibe como bloco */
+  width: 100%;                               /* ocupa toda a largura da moldura */
+  height: 100%;                              /* ocupa toda a altura da moldura */
+  object-fit: contain;                       /* mostra a foto inteira sem cortes */
+  display: block;                            /* exibe como bloco */
+  background: #222;                          /* fundo escuro para áreas vazias */
 }
 
 /* Responsividade para telas médias */
