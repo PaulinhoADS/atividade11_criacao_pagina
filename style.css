@@ -251,8 +251,8 @@ body {
 
 /* Moldura e fundo da foto */
 .photo-placeholder {
-  width: 385px;                                     /* largura da moldura 
-  height: 510px;                                    /* altura da moldura 
+  width: 192px;                                     /* largura da moldura 
+  height: 255px;                                    /* altura da moldura 
   background: #222;                                 /* fundo escuro */
   border-radius: 16px;                              /* borda arredondada */
   box-shadow: 0 2px 24px rgba(255, 214, 0, 0.12);   /* sombra */
