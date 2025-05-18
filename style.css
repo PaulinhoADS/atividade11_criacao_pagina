@@ -272,26 +272,6 @@ body {
   display: block;                           /* exibe como bloco */
 }
 
-/* Decoração animada ao redor da foto */
-.photo-decor {
-  position: absolute;                       /* posição absoluta */
-  top: -10px;                               /* acima da foto */
-  left: -10px;                              /* à esquerda da foto */
-  width: 240px;                             /* largura decor */
-  height: 260px;                            /* altura decor */
-  border: 2px dashed var(--yellow);         /* borda tracejada amarela */
-  border-radius: 20px;                      /* borda arredondada */
-  pointer-events: none;                     /* ignora eventos mouse */
-  z-index: 1;                               /* acima da foto */
-  animation: pulse-decor 2s infinite alternate; /* animação pulsar */
-}
-
-/* Animação da decoração da foto */
-@keyframes pulse-decor {
-  from { opacity: 0.8; }                    /* início opacidade */
-  to { opacity: 0.4; }                      /* fim opacidade */
-}
-
 /* Responsividade para telas médias */
 @media (max-width: 900px) {
   .profile-section {
